@@ -15,46 +15,36 @@ prompt.get(['A', 'B'],
 
 function JQA (err,result){
 	
-		console.log("A is " + result.A);
- 		console.log("B is " + result.B);
+	//	console.log("A is " + result.A);
+ 	//	console.log("B is " + result.B);
 			 var C = parseFloat(result.A);
 			 var D = parseFloat(result.B);
-				console.log(C+D);
+				//console.log(C+D);
 			// 	//console.log(result)
-			 	Z = (C+D)
+			 //	Z = (C+D)
 
 
-prompt.get(['Q'], function O (err,result) {
-		console.log(" the math operation is " + result.Q);
- 
- function whatMathOperation(err,result){
-
+prompt.get(['Q'], function whatMathOperation (err,result) {
+		console.log(" the math operation is ( '+'  '-'  '/' '*' ) " + result.Q);
  	if (result.Q == "+"){
  		Z = (C + D)
  	} else if (result.Q == "-"){
  		Z = (C - D)
- 	// } else if (result.Q == "/"){
- 	// 	Z = (C / D)
- 	// } else if (result.Q == "*"){
- 	// 	Z = (C * D)
- 	 };
-  }})
-});
-
-
-
-
-
-
+ 	} else if (result.Q == "/"){
+ 		Z = (C / D)
+ 	} else if (result.Q == "*"){
+ 		Z = (C * D)
+ 	 }
 
 //  //===========================================================================================================//
 
-// if (numberIsNan(Z)){
-// 		console.log(chalk.red('error! INPUT NUMBERS'))
+if (numberIsNan(Z)){
+		console.log(chalk.red('error! INPUT NUMBERS FOR A AND B AND INPUT ( "+"  "-"  "/" "*" )  FOR MATH OPERATIONS '))
 
-// 	  } else {
-// 	  		console.log(chalk.green( "sum is equal to:" + Z + '          Thank you for not putting in letters or special characters =^.^= '))
-// 	  }
+	  } else {
+	  		console.log(chalk.green( " Beep boop the answer is -->   " + Z + ' <--                  =^.^= '))
+	  }
 // //============================================================================================================//
 
-// }};
+	})
+});
