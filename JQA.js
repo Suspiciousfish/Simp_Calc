@@ -1,7 +1,3 @@
-/* 
-adding machine
-*/
-const math = require('mathjs');
 const chalk = require('chalk');
 var numberIsNan = require('number-is-nan');
 var prompt = require ('prompt');
@@ -15,7 +11,7 @@ prompt.get(['A', 'B'], // prompts the user in the CLI to input something for an 
 		var C = parseFloat(result.A);
 		var D = parseFloat(result.B);
 
-console.log("Please select one of the following math operations ( '+'  '-'  '/' '*' ) OR % to find the remainder ");
+console.log("Please select one of the following math operations ( '+'  '-'  '/' '*' ) OR % to find a remainder ");
 
 prompt.get(['Q'], function whatMathOperation (err,result) {  // this function takes the response form the CLI and uses it to Determine which math operation is preformed
  			if (result.Q == "+"){
@@ -35,8 +31,7 @@ prompt.get(['Q'], function whatMathOperation (err,result) {  // this function ta
 // this if statment first checks if there were any non numbers input for A & B , and makes sure the user uses a one of the 4 approved math operations was selected
 
 if (numberIsNan(Z)){
-		console.log(chalk.red('error! INPUT NUMBERS FOR A AND B AND INPUT ( "+"  "-"  "/" "*" )  FOR MATH OPERATIONS '))
-
+		console.log(chalk.red('error! INPUT NUMBERS FOR A AND B AND INPUT ( "+"  "-"  "/" "*" )  FOR MATH OPERATIONS ' + " ::::::::: Function error (err) is [ " + err  + " ] :::::::::" ))
 	  } else {
 	  		console.log(chalk.green( " Beep boop the answer is -->   " + Z + '   <--                  =^.^= '))
 	  }
