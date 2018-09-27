@@ -1,34 +1,60 @@
 /* 
 adding machine
 */
-const math = require('mathjs')
+const math = require('mathjs');
 const chalk = require('chalk');
 var numberIsNan = require('number-is-nan');
 var prompt = require ('prompt');
 
+
+
+
 prompt.start();
 
-Number(prompt.get(['A', 'B', 'OP'], function JQA(err,result){
-	var A;
-	var B;
-	var Q
+prompt.get(['A', 'B'],
+
+function JQA (err,result){
+	
 		console.log("A is " + result.A);
  		console.log("B is " + result.B);
- 		console.log("Operation is " + result.OP)	
-			var C = parseFloat(result.A);
-			var D = parseFloat(result.B);
+			 var C = parseFloat(result.A);
+			 var D = parseFloat(result.B);
 				console.log(C+D);
-				//console.log(result)
-var Z = (C+D)
+			// 	//console.log(result)
+			 	Z = (C+D)
 
-//===========================================================================================================//
 
-if (numberIsNan(Z)){
-		console.log(chalk.red('error! INPUT NUMBERS'))
+prompt.get(['Q'], function O (err,result) {
+		console.log(" the math operation is " + result.Q);
+ 
+ function whatMathOperation(err,result){
 
-	  } else {
-	  		console.log(chalk.green('thank you for not putting in letters or special characters =^.^= '))
-	  }
+ 	if (result.Q == "+"){
+ 		Z = (C + D)
+ 	} else if (result.Q == "-"){
+ 		Z = (C - D)
+ 	// } else if (result.Q == "/"){
+ 	// 	Z = (C / D)
+ 	// } else if (result.Q == "*"){
+ 	// 	Z = (C * D)
+ 	 };
+  }})
+});
 
-}));
 
+
+
+
+
+
+//  //===========================================================================================================//
+
+// if (numberIsNan(Z)){
+// 		console.log(chalk.red('error! INPUT NUMBERS'))
+
+// 	  } else {
+// 	  		console.log(chalk.green( "sum is equal to:" + Z + '          Thank you for not putting in letters or special characters =^.^= '))
+// 	  }
+// //============================================================================================================//
+
+// }};
